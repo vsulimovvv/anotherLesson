@@ -1,31 +1,43 @@
-let myNumber = Math.floor(Math.random() * 101);
-console.log(myNumber);
-let userNumber;
-let count = 3;
+'use strict';
 
-document.querySelector('.button').onclick = () => {
-  let getUserNumber = function () {
-    userNumber = +prompt('Ввeдите число от 1 до 100');
-    if (count > 0) {
-      count--;
-      console.log('Попыток осталось: ' + count);
-      if (myNumber === userNumber) {
-        alert('вы угадали');
-      } else if (userNumber < myNumber) {
+const getRandomInt = function (max) {
+  return Math.floor(Math.random() * max);
+};
+
+const isNum = function (n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+};
+
+const start = function () {
+
+  const randomNumber = getRandomInt(100);
+  console.log(randomNumber);
+
+  function game() {
+    const num = prompt('Ввeдите число от 1 до 100');
+
+    if (num === null) {
+      alert('Пока пока');
+      return;
+    }
+
+    if (isNum(num)) {
+      const realNum = +num;
+      if (realNum > randomNumber) {
+        alert('Загаднное число меньше');
+        game();
+      } else if (realNum < randomNumber) {
         alert('Загаданное число больше');
-        getUserNumber();
-      } else if (userNumber > myNumber) {
-        alert('Загаданное число меньше');
-        getUserNumber();
-      } else if (typeof userNumber !== 'Number') {
-        alert('Нужно ввести число!');
-        getUserNumber();
-      } else if (userNumber === NaN) {
-        alert('See you again!');
+        game();
+      } else {
+        alert('Вы угадали!');
       }
     } else {
-      alert('Попыток не осталось. Игра окончена');
+      alert('Вы угадали!');
+      game();
     }
-  };
-  getUserNumber();
+  }
+  game();
 };
+
+start();
