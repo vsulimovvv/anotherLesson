@@ -31,9 +31,10 @@ const start = function () {
         game();
       } else {
         alert('Вы угадали!');
+      game();
       }
     } else {
-      alert('Вы угадали!');
+      alert('Введите число!');
       game();
     }
   }
