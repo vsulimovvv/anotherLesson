@@ -10,8 +10,9 @@ header.innerHTML = 'Книга 3. this и Прототипы Объектов';
 
 document.body.style.backgroundImage = 'url(./image/you-dont-know-js.jpg)';
 
+let body = document.querySelector('body');
 let adv = document.querySelector('.adv');
-adv.style.display = 'none';
+body.removeChild(adv);
 
 let bookSix = document.querySelectorAll('ul')[5];
 let newLi = document.createElement('li');
