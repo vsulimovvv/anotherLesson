@@ -20,7 +20,7 @@ class Options {
     newDiv.className = 'new-div';
     document.body.appendChild(newDiv);
     newDiv.textContent = prompt("Любой текст", "");
-    newDiv.textContent = 'newDiv';
+    // newDiv.textContent = 'newDiv';
     newDiv.style.cssText = `height: ${this.height}; 
         width: ${this.width}; 
         background-color: ${this.backgroundColor}; 
@@ -32,7 +32,7 @@ class Options {
     newP.id = 'new-p';
     document.body.appendChild(newP);
     newP.textContent = prompt("Любой текст", "");
-    newP.textContent = 'newP';
+    // newP.textContent = 'newP';
     newP.style.cssText = `height: ${this.height}; 
         width: ${this.width}; 
         background-color: ${this.backgroundColor}; 
