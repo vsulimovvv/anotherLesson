@@ -6,6 +6,7 @@
 
 let out = document.querySelector('.out'),
   out2 = document.querySelector('.out2'),
+  out0 = document.querySelector('.out0'),
   nowDate = new Date(),
   day = nowDate.getDate(),
   month = nowDate.getMonth() + 1,
@@ -13,6 +14,16 @@ let out = document.querySelector('.out'),
   hour = nowDate.getHours(),
   minutes = nowDate.getMinutes(),
   seconds = nowDate.getSeconds();
+
+if (hour >= 7 && hour <= 12) {
+  out0.textContent = 'Доброе утро';
+} else if (hour >= 13 && hour <= 17) {
+  out0.textContent = 'Добрый день';
+} else if (hour >= 18 && hour <= 22) {
+  out0.textContent = 'Добрый вечер';
+} else if (hour >= 23 && hour <= 7) {
+  out0.textContent = 'Доброе ночи';
+}
 
 function getWeekDay(d) {
   let days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
@@ -59,4 +70,3 @@ window.addEventListener('DOMContentLoaded', function () {
   }
   setInterval(countTimer, 1000, '1 january 2021')
 });
-
