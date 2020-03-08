@@ -16,7 +16,6 @@ let out = document.querySelector('.out'),
   hour = nowDate.getHours(),
   minutes = nowDate.getMinutes(),
   seconds = nowDate.getSeconds();
-console.log(hour);
 
 
 if (hour >= 5 && hour < 12)
